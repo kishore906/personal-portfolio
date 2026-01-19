@@ -1,32 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import ScrollToTop from './components/ScrollToTop';
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    // Check system preference initially
-    if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return true;
-    }
-    return false;
-  });
+  const [darkMode, setDarkMode] = useState(true);
+
+  // const [darkMode, setDarkMode] = useState(() => {
+  //   // Check system preference initially
+  //   if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  //     return true;
+  //   }
+  //   return false;
+  // });
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
   const toggleTheme = () => {
-    setDarkMode(prev => !prev);
+    setDarkMode((prev) => !prev);
   };
 
   return (
